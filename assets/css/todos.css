@@ -7,7 +7,7 @@ body {
 
 h1 {
 	background-color: #2980b9;
-	background: rgba(126, 9, 255, 0.3);
+	background: linear-gradient(to left, #6791e8 , #a79fdc);
 	color: #fff;
 	margin: 0;
 	padding: 10px 20px;
@@ -28,14 +28,19 @@ li {
 	line-height: 40px;
 	color: #666;
 	cursor: default;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
 
 .blinkAnim {
-  animation: blink 0.7s linear;
+	animation: blink 0.7s linear;
 }
 
 @keyframes blink {  
-  50% { background-color: #f1e8ff; }
+	50% { 
+		background-color: #f1e8ff; 
+	}
 }
 
 span {
@@ -48,17 +53,17 @@ span {
 
 .removeButton {
 	float: right;
-    background: rgb(119, 119, 119);
-    color: #ffffff;
-    width: 20px;
-    height: 20px;
-    line-height: 18px;
-    margin-top: 10px;
-    font-size: 13px;
-    margin-right: 5px;
-    border-radius: 50%;
-    opacity: 0;
-    cursor: pointer;
+	background: rgb(119, 119, 119);
+	color: #ffffff;
+	width: 20px;
+	height: 20px;
+	line-height: 18px;
+	margin-top: 10px;
+	font-size: 13px;
+	margin-right: 5px;
+	border-radius: 50%;
+	opacity: 0;
+	cursor: pointer;
 }
 
 .removeButton:hover {
@@ -71,6 +76,7 @@ span {
 
 .checkButton {
 	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 .checkButton:hover {
@@ -89,34 +95,34 @@ input {
 
 .addButton {
 	font-size: 14px;
-    margin-right: 10px;
-    background: #7794e5;
-    border-radius: 6px;
-    padding: 5px;
-    margin-top: 12px;
-    color: #ffffff;
-    position: absolute;
-    right: 0;
-    left: unset;
-    cursor: pointer;
-    opacity: 0;
-    transition: 0.3s ease;
-    pointer-events: none;
+	margin-right: 10px;
+	background: #7794e5;
+	border-radius: 6px;
+	padding: 5px;
+	margin-top: 12px;
+	color: #ffffff;
+	position: absolute;
+	right: 0;
+	left: unset;
+	cursor: pointer;
+	opacity: 0;
+	transition: 0.3s ease;
+	pointer-events: none;
 }
 
 .addNewContainer {
 	width: 100%;
-    position: relative;
-    border-bottom: 1px solid #cccccc;
+	position: relative;
+	border-bottom: 1px solid #cccccc;
 }
 
 .addNewContainer .plusSign {
 	font-size: 18px;
-    margin-left: 10px;
-    margin-top: 18px;
-    color: #929292;
-    position: absolute;
-    left: 0;
+	margin-left: 10px;
+	margin-top: 18px;
+	color: #929292;
+	position: absolute;
+	left: 0;
 }
 
 li:hover .removeButton {
@@ -126,7 +132,7 @@ li:hover .removeButton {
 input:focus {
 	background: #fff;
 	border: 3px solid rgba(0, 0, 0, 0);
-    outline: none;
+	outline: none;
 }
 
 .fa-plus {
@@ -142,4 +148,17 @@ input:focus {
 	width: 50%;
 	margin: 100px auto;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.48);
+}
+
+@media(max-width: 768px) {
+	body {
+		background: #fff;
+		margin: 0;
+	}
+
+	#container {
+		width: 100%;
+		margin: 0;
+		box-shadow: none;
+	}
 }
