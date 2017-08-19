@@ -27,18 +27,42 @@ li {
 	height: 40px;
 	line-height: 40px;
 	color: #666;
+	cursor: default;
 }
 
 span {
-	background: #e74c3c;
 	height: 40px;
-	margin-right: 20px;
+	margin: 0 10px;
 	text-align: center;
-	color: #fff;
-	width: 0px;
 	display: inline-block;
 	transition: 0.2s linear;
-	opacity: 0;
+}
+
+.removeButton {
+	float: right;
+    background: rgb(119, 119, 119);
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    line-height: 18px;
+    margin-top: 10px;
+    font-size: 13px;
+    margin-right: 5px;
+    border-radius: 50%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.removeButton:hover {
+	background: #000;
+}
+
+.checkButton {
+	cursor: pointer;
+}
+
+.checkButton:hover {
+	color: #000;
 }
 
 input {
@@ -52,9 +76,8 @@ input {
 	border: 3px solid rgba(0, 0, 0, 0);
 }
 
-li:hover span {
+li:hover .removeButton {
 	opacity: 1.0;
-	width: 40px;
 }
 
 input:focus {
@@ -75,5 +98,5 @@ input:focus {
 #container {
 	width: 50%;
 	margin: 100px auto;
-	box-shadow: 0 0 3px rgba(0,0,0, 0.1)
+	box-shadow: 0 0 3px rgba(0, 0, 0, 0.48);
 }
