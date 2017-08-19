@@ -30,6 +30,14 @@ li {
 	cursor: default;
 }
 
+.blinkAnim {
+  animation: blink 0.7s linear;
+}
+
+@keyframes blink {  
+  50% { background-color: #f1e8ff; }
+}
+
 span {
 	height: 40px;
 	margin: 0 10px;
@@ -57,6 +65,10 @@ span {
 	background: #000;
 }
 
+.completed:hover .checkButton {
+	color: #717171;
+}
+
 .checkButton {
 	cursor: pointer;
 }
@@ -67,13 +79,44 @@ span {
 
 input {
 	font-size: 18px;
-	background-color: #f7f7f7;
-	background-color: rgba(193, 195, 255, 0.89);
 	width: 100%;
-	padding: 13px 13px 13px 20px;
+	padding: 13px 13px 13px 30px;
 	box-sizing: border-box;
-	color: #2980b9;
+	color: #525252;
 	border: 3px solid rgba(0, 0, 0, 0);
+	transition: 0.3s ease;
+}
+
+.addButton {
+	font-size: 14px;
+    margin-right: 10px;
+    background: #7794e5;
+    border-radius: 6px;
+    padding: 5px;
+    margin-top: 12px;
+    color: #ffffff;
+    position: absolute;
+    right: 0;
+    left: unset;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.3s ease;
+    pointer-events: none;
+}
+
+.addNewContainer {
+	width: 100%;
+    position: relative;
+    border-bottom: 1px solid #cccccc;
+}
+
+.addNewContainer .plusSign {
+	font-size: 18px;
+    margin-left: 10px;
+    margin-top: 18px;
+    color: #929292;
+    position: absolute;
+    left: 0;
 }
 
 li:hover .removeButton {
@@ -82,8 +125,8 @@ li:hover .removeButton {
 
 input:focus {
 	background: #fff;
-	border: 3px solid #2980b9;
-	outline: none;
+	border: 3px solid rgba(0, 0, 0, 0);
+    outline: none;
 }
 
 .fa-plus {
