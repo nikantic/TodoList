@@ -82,6 +82,7 @@ span {
 }
 
 .container {
+	position: relative;
 	width: 50%;
 	margin: 100px auto;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.48);
@@ -161,6 +162,16 @@ span {
 .completed {
 	color: #ccc;
 	text-decoration: line-through;
+}
+
+.github {
+	position: absolute;
+	top: 7px;
+	right: 10px;
+}
+
+.github img {
+	height: 34px;
 }
 
 @media(max-width: 768px) {
