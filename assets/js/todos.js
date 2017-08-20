@@ -1,4 +1,4 @@
-// Check off specific To Dos by clicking
+// Check off specific To Dos by clicking, item ordering
 $("ul").on("click", ".checkButton", function() {
 	if ($(this).parent().hasClass("completed")) {
 		$(this).find(".checkIcon").removeClass("fa-check-square").addClass("fa-square-o");
@@ -30,6 +30,7 @@ $("ul").on("click", ".removeButton", function(event) {
 	event.stopPropagation();
 });
 
+// Show/Hide addButton
 $("input[type='text']").keyup(function() {
 	if($(this).val() < 1) {
 		$(".addButton").css({"opacity": 0, "pointer-events": "none"});
@@ -38,10 +39,12 @@ $("input[type='text']").keyup(function() {
 	}
 });
 
+// Add items with ENTER key
 $("input[type='text']").keypress(function(event) {
 	if (event.which === 13) {
 		// grab new todo text from input
 		var todoText = $(this).val();
+		// prevent empty inputs
 		if (todoText.length > 0) {
 			$(this).val("");
 			// create a new li and add to ul
@@ -51,6 +54,7 @@ $("input[type='text']").keypress(function(event) {
 	}
 });
 
+// Add items with addButton
 $(".addButton").click(function() {
 	var todoText = $("input[type='text']").val();
 	$("input[type='text']").val("");
