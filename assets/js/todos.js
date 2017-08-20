@@ -1,23 +1,23 @@
 // Check off specific To Dos by clicking
-$("ul").on("click", "li", function() {
-	if ($(this).hasClass("completed")) {
+$("ul").on("click", ".checkButton", function() {
+	if ($(this).parent().hasClass("completed")) {
 		$(this).find(".checkIcon").removeClass("fa-check-square").addClass("fa-square-o");
 		setTimeout(function(){
-			$(this).removeClass("completed");
-			$(this).insertBefore($('.completed:first'))
+			$(this).parent().removeClass("completed");
+			$(this).parent().insertBefore($('.completed:first'))
 		}.bind(this), 200);
 	} else if ($("li").hasClass("completed")) {
 		//checking if any li has class .completed
 		$(this).find(".checkIcon").removeClass("fa-square-o").addClass("fa-check-square");
 		setTimeout(function(){
-			$(this).insertBefore($('.completed:first'));
-			$(this).addClass("completed");
+			$(this).parent().insertBefore($('.completed:first'));
+			$(this).parent().addClass("completed");
 		}.bind(this), 200);
 	} else {
 		$(this).find(".checkIcon").removeClass("fa-square-o").addClass("fa-check-square");
 		setTimeout(function(){
-			$(this).addClass("completed");
-			$(this).appendTo($("ul"));
+			$(this).parent().addClass("completed");
+			$(this).parent().appendTo($("ul"));
 		}.bind(this), 200);
 	}
 });

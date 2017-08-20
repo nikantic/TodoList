@@ -27,10 +27,18 @@ li {
 	height: 40px;
 	line-height: 40px;
 	color: #666;
+	border-top: 1px solid rgba(255, 255, 255, 0);
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    transition: 1s ease;
 	cursor: default;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+}
+
+li:hover {
+    border-top: 1px solid #adadad;
+    border-bottom: 1px solid #adadad;
 }
 
 .blinkAnim {
@@ -120,7 +128,7 @@ input {
 	font-size: 18px;
 	margin-left: 10px;
 	margin-top: 18px;
-	color: #929292;
+	color: #e6e6e6;
 	position: absolute;
 	left: 0;
 }
