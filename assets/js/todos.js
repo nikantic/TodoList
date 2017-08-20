@@ -24,7 +24,7 @@ $("ul").on("click", ".checkButton", function() {
 
 // Click on X to delete To Dos
 $("ul").on("click", ".removeButton", function(event) {
-	$(this).parent().fadeOut(500, function() { 
+	$(this).parent().fadeOut(100, function() { 
 		$(this).remove();
 	});
 	event.stopPropagation();
@@ -45,7 +45,7 @@ $("input[type='text']").keypress(function(event) {
 		if (todoText.length > 0) {
 			$(this).val("");
 			// create a new li and add to ul
-			$("ul").prepend("<li><span class='checkButton'><i class='fa fa-square-o checkIcon' aria-hidden='true'></i></span><span class='removeButton'><i class='fa fa-remove' aria-hidden='true'></i></span> " + todoText + "</li>");
+			$("ul").prepend("<li><span class='checkButton'><i class='fa fa-square-o checkIcon' aria-hidden='true'></i></span><span class='removeButton'><i class='fa fa-remove removeIcon' aria-hidden='true'></i></span> " + todoText + "</li>");
 			$("li:first").addClass("blinkAnim");
 		}		
 	}
@@ -54,7 +54,7 @@ $("input[type='text']").keypress(function(event) {
 $(".addButton").click(function() {
 	var todoText = $("input[type='text']").val();
 	$("input[type='text']").val("");
-	$("ul").prepend("<li><span class='checkButton'><i class='fa fa-square-o checkIcon' aria-hidden='true'></i></span><span class='removeButton'><i class='fa fa-remove' aria-hidden='true'></i></span> " + todoText + "</li>");
+	$("ul").prepend("<li><span class='checkButton'><i class='fa fa-square-o checkIcon' aria-hidden='true'></i></span><span class='removeButton'><i class='fa fa-remove removeIcon' aria-hidden='true'></i></span> " + todoText + "</li>");
 	$("li:first").addClass("blinkAnim");
 	$(this).css({"opacity": 0, "pointer-events": "none"});
 });
